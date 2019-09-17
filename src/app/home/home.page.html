@@ -1,0 +1,34 @@
+<ion-content>
+  <div class="img">
+      <ion-buttons class="sidemenu" slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <div class="icon-div"><ion-icon name="play-circle" (click)="playVideo()" class="play-icon"></ion-icon></div>
+      <p class="text-1">LATEST ALBUM</p>
+      <p class="text-2">Life Between Two Gardens</p>
+  </div>
+
+
+  <ion-slides #mySlider (ionSlidesDidLoad)="slidesDidLoad()" autoplay="5000" loop="true" speed="500" pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let image of images">
+      <div class="share-icon-div"><ion-icon class="icon" name="share"></ion-icon></div>
+      <img src="{{image.logo}}">
+    </ion-slide>
+  </ion-slides>
+
+
+</ion-content>
+<ion-footer>
+  <!-- <div class="arrow"><ion-icon name="arrow-round-down"></ion-icon></div> -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary" size="small">
+      <ion-icon name="arrow-dropup"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button><ion-icon name="log-in"></ion-icon></ion-fab-button>
+      <ion-fab-button><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+      <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+      <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-footer>
